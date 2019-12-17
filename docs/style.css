@@ -5,6 +5,10 @@ html {
   background-image: url("https://www.transparenttextures.com/patterns/office.png");
 }
 
+body{
+  min-height: 0px !important;
+}
+
 #page-wrapper {
   width: 600px;
   background: #fff;
