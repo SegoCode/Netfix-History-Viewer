@@ -1,54 +1,55 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Netflix History Viewer</title>
-  <link rel="stylesheet" href="./style.css">
+<html lang="en">
 
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<head>
-  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
-  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.indigo-pink.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <title>Netflix History Viewer</title>
+    <link rel="stylesheet" href="./style.css">
 
+  </head>
 
-<div id="page-wrapper">
-  <h1 class="center headingNetflix">Netflix </h1>
-  <h1 class="center heading">History Viewer</h1>
+  <body>
+    <!-- partial:index.partial.html -->
+    <html>
 
-  <div class="center">
-    <button class="input-file">
-       <input type="file" id="fileInput"/>
-       <label for="file-input">LOAD</label>
-    </button>
-		</div>
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+      </head>
 
-  <button type="button" class="collapsible">Open/Hide Stats</button>
-<div class="content">
-    <canvas class="canvas" id="pieChart"></canvas>
-</div>
-  
+      <body onload="loadView();">
+        <h1 class="headingNetflix">Netflix </h1>
+        <h1 class="heading">History Viewer</h1>
+        <button id="loadButton" onclick="document.getElementById('fileInput').click();">Load file
+          <input type="file" id="fileInput" />
+        </button>
+        <div style="display:none;" id="chartdiv"></div>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Watched episodes</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <td id="footerText" colspan="3"></td>
+            </tr>
+          </tfoot>
+          <tbody id="dataTable">
+            <!-- JS inster data here -->
+          </tbody>
+        </table>
+      </body>
 
-  
-<table id="dataTable" class="display" width="100%"></table>
+    </html>
+    <!-- partial -->
+    <script src="./script.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+  </body>
 
-     <div class="container">
-            <div class="tab tab-1">
-                <table id="table" class="mdl-data-table">
-                    <tr>
-                        <th>Name</th>
-                        <th>Views</th>
-                    </tr>
-                </table>
-            </div>
-	</div>
-  
-    <a href="https://github.com/SegoCode/Netfix-History-Viewer" id="ribbon" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 50;" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
-<!-- partial -->
-  <script  src="./script.js"></script>
-
-</body>
 </html>
